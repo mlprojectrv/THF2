@@ -14,4 +14,11 @@ public class ExampleUnitTest {
     public void addition_isCorrect() {
         assertEquals(4, 2 + 2);
     }
+
+    @Test
+    public void data_Input_valid() {
+        Sales s1 = new Sales();
+        s1.account_id.hash = "h5";
+        s1.account_id.salt = 5;
+    }
 }

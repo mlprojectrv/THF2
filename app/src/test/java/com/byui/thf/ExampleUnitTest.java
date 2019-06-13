@@ -20,5 +20,6 @@ public class ExampleUnitTest {
         Sales s1 = new Sales();
         s1.account_id.hash = "h5";
         s1.account_id.salt = 5;
+        assertEquals(s1.account_id.salt, 5);
     }
 }

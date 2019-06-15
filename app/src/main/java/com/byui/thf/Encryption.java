@@ -49,7 +49,7 @@ public final class Encryption {
     }
 
     /**
-     * This function takes the password from the {@link User} class and hashes it.
+     * This function takes the password from the {@link Account_id} class and hashes it.
      * As a side-effect, the original password value is removed for security purposes.
      * @param user The user whose password needs to be hashed.
      * @exception Exception If there is a problem with the chosen hash function.
@@ -88,7 +88,7 @@ public final class Encryption {
     }
 
     /**
-     * This function uses the password and salt in the {@link User} to generate a hash,
+     * This function uses the password and salt in the {@link Account_id) to generate a hash,
      * then compares that hash to the original hash value.
      * @param user The user whose password needs to be hashed.
      * @return Whether or not the password values match.

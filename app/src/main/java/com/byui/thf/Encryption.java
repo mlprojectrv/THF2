@@ -20,7 +20,7 @@ public final class Encryption {
     private static final int KEY_LENGTH = 256;
 
     // By using a private constructor, we prevent instances of this class from being created
-    private NSALoginController() {
+    private  Encryption() {
 
     }
 
@@ -54,19 +54,8 @@ public final class Encryption {
      * @param user The user whose password needs to be hashed.
      * @exception Exception If there is a problem with the chosen hash function.
      */
-    public static void hashUserPassword(User user) throws Exception {
+    public static void hashUserPassword(Account_id user) throws Exception {
 
-        // Enforce the new NSA Password policy
-        if(user.getPassword().length() < 8) {
-            throw new WeakPasswordException("Password too short.");
-        }
-
-        // Regular expressions are super-powerful for pulling things out of strings
-        // For a complete regular expression tutorial, see:
-        // http://www.regular-expressions.info/tutorial.html
-        if(!user.getPassword().matches(".*\\d+.*")) {
-            throw new WeakPasswordException("Password must contain at least one number.");
-        }
 
         // Get the next random salt value to use for this password
         byte[] salt = getNextSalt();
@@ -105,7 +94,7 @@ public final class Encryption {
      * @return Whether or not the password values match.
      * @exception Exception If there is a problem with the chosen hash function.
      */
-    public static Boolean verifyPassword(User user) throws Exception {
+    public static Boolean verifyPassword(Account_id user) throws Exception {
 
         // Have to get the raw data values to use on our hash function
         char[] password = user.getPassword().toCharArray();

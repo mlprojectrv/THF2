@@ -30,11 +30,18 @@ public class Account_id {
         return hash;
     }
 
-    public void setHash(String newHash) {
-        hash = newHash;
+    public void encrypt()throws Exception {
+        Encryption.hashUserPassword(this);
     }
+    public void setHash(String hash){this.hash = hash; }
 
-}
+    public void login (String password)throws Exception{
+        setPassword(password);
+        if (Encryption.verifyPassword(this)){
+            System.out.println("access granted.");}
+        else{System.out.println("denied");}
+        };
+    }
 
 
 

@@ -7,6 +7,7 @@ public class Price {
     private Date end_date;
     private int amount;
     private int Price_id;
+    private Boolean active;
 
     public void setPrice_id(int price_id) {
         Price_id = price_id;

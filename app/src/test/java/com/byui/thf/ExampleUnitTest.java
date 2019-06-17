@@ -2,6 +2,11 @@ package com.byui.thf;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Date;
+import java.util.Calendar;
+
 import static org.junit.Assert.*;
 
 /**
@@ -13,9 +18,34 @@ public class ExampleUnitTest {
 
     @Test
     public void data_Input_valid() {
+        Calendar c1 = Calendar.getInstance();
+        c1.set(1994, 4, 12);
+
+
         Sales s1 = new Sales();
-        s1.account_id.hash = "h5";
-        s1.account_id.salt = 5;
-        assertEquals(s1.account_id.salt, 5);
+        Price p1 = new Price();
+        p1.setStart_date(c1.getTime());
+
+        s1.amount = 10;
+        s1.created_by = 1;
+        s1.account_id.setPassword("PassworD");
+        s1.discount = true;
+        try {
+            s1.account_id.encrypt() ;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        try {
+            s1.account_id.login("PassworD");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void func() {
+        ArrayList<Price> prices = new ArrayList<Price>();
+        ArrayList<Account> accounts;
     }
 }

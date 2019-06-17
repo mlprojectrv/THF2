@@ -8,7 +8,7 @@ public class Sales {
     Sales() {
         product_id = new Product_id();
         price_id = new Price_id();
-        account_id = new Account_id();
+        account_id = new Account_id(null);
     }
 
     public int sale_id;

@@ -6,7 +6,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
 import java.util.Calendar;
-
+import com.google.gson.Gson;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.*;
 import static org.junit.Assert.*;
 
 /**
@@ -47,5 +50,11 @@ public class ExampleUnitTest {
     public void func() {
         ArrayList<Price> prices = new ArrayList<Price>();
         ArrayList<Account> accounts;
+    }
+
+    @Test
+    public void writingJson() {
+        Gson gson = new Gson();
+        String json = gson.toJson(myObj);
     }
 }

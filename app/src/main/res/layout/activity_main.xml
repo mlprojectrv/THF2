@@ -40,7 +40,7 @@
         android:layout_marginTop="16dp"
         android:onClick="successLogin"
         android:text="Login"
-        app:layout_constraintTop_toBottomOf="@id/_id"
+        app:layout_constraintTop_toBottomOf="@id/typId"
         tools:layout_editor_absoluteX="161dp" />
 
     <TextView
@@ -50,7 +50,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         android:text="Type Id"
-        app:layout_constraintBottom_toTopOf="@+id/text"
+        app:layout_constraintBottom_toTopOf="@+id/typId"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="73dp" />
 
@@ -61,7 +61,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         android:text="password"
-        app:layout_constraintBottom_toTopOf="@id/textView"
+        app:layout_constraintBottom_toTopOf="@id/typePassword"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="275dp" />
 </android.support.constraint.ConstraintLayout>

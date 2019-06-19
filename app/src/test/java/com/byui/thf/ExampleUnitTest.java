@@ -1,15 +1,21 @@
 package com.byui.thf;
 
 import org.junit.Test;
+import org.mockito.internal.matchers.Null;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
 import java.util.Calendar;
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.*;
+import java.util.LinkedList;
+import java.util.List;
 import static org.junit.Assert.*;
 
 /**
@@ -19,7 +25,7 @@ import static org.junit.Assert.*;
  */
 public class ExampleUnitTest {
 
-    @Test
+
     public void data_Input_valid() {
         Calendar c1 = Calendar.getInstance();
         c1.set(1994, 4, 12);
@@ -48,13 +54,48 @@ public class ExampleUnitTest {
 
     @Test
     public void func() {
-        ArrayList<Price> prices = new ArrayList<Price>();
-        ArrayList<Account> accounts;
+        Calendar c1 = Calendar.getInstance();
+        c1.set(1994, 8, 12);
+        Price p1 = new Price();
+        p1.setStart_date(c1.getTime());
+        p1.setEnd_date(null);
+        p1.setAmount(10);
+
+        Price p2 = new Price();
+        c1.set(1994, 8, 13);
+        p2.setStart_date(c1.getTime());
+        p2.setEnd_date(null);
+        p2.setAmount(50);
+
+        Price p3 = new Price();
+        c1.set(1994, 8, 13);
+        p3.setStart_date(c1.getTime());
+        p3.setEnd_date(null);
+        p3.setAmount(50);
+
+        System.out.print(p1.getPrimaryId());
+
+        Type listType = new TypeToken<List<Price>>() {}.getType();
+        List<Price> target = new LinkedList<>();
+        target.add(p1);
+        target.add(p2);
+        target.add(p3);
+
+        Gson gson = new Gson();
+        String json = gson.toJson(target, listType);
+        List<JsonConvertible> target2 = gson.fromJson(json, listType);
+
+        System.out.print(json);
+
+        writingJson(target2, "price 1");
     }
 
-    @Test
-    public void writingJson() {
+    public void writingJson(List<JsonConvertible> list, String filename) {
         Gson gson = new Gson();
-        String json = gson.toJson(myObj);
+        try (FileWriter writer = new FileWriter(filename)){
+            gson.toJson(list, writer);
+        } catch(IOException cause){
+            System.out.println("Trouble writing file.");
+        }
     }
 }

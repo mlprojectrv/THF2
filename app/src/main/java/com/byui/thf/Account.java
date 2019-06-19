@@ -46,5 +46,4 @@ public class Account {
     public void setHashCode(String hashCode) {
         this.hashCode = hashCode;
     }
-
 }

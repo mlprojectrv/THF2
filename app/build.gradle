@@ -46,3 +46,8 @@ dependencies {
 dependencies {
     implementation 'com.android.support.constraint:constraint-layout:+'
 }
+dependencies {
+    // Add this line
+    implementation 'com.google.firebase:firebase-core:16.0.9'
+}
+apply plugin: 'com.google.gms.google-services'

@@ -9,13 +9,12 @@ public class Price extends JsonConvertible{
     private Date end_date;
     private int amount;
     private boolean active;
-    public static int primaryId;
+    public static int primaryId = 0;
 
     Price(){
         this.id = primaryId;
         increment();
     }
-
     // getters
 
     public int getPrice_id(){return id;}

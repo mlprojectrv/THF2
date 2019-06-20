@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "559298067272",
+    "firebase_url": "https://thehandsomefactory-9b55c.firebaseio.com",
+    "project_id": "thehandsomefactory-9b55c",
+    "storage_bucket": "thehandsomefactory-9b55c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:559298067272:android:8304ccd08237db34",
+        "android_client_info": {
+          "package_name": "com.byui.thf"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "559298067272-qct5g9baeo2l2i90j7qi3nik3g6bnrkg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzPlaVq5tmrYzkySiWlwVlLF3SVUj_CqQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "559298067272-qct5g9baeo2l2i90j7qi3nik3g6bnrkg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

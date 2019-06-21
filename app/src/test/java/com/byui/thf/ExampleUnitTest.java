@@ -14,6 +14,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.*;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import static org.junit.Assert.*;
@@ -73,13 +74,18 @@ public class ExampleUnitTest {
         p3.setEnd_date(null);
         p3.setAmount(50);
 
-        System.out.print(p1.getPrimaryId());
+        IdGenerator idg = new IdGenerator();
+
 
         Type listType = new TypeToken<List<Price>>() {}.getType();
         List<Price> target = new LinkedList<>();
         target.add(p1);
         target.add(p2);
         target.add(p3);
+
+        for (JsonConvertible i : target) {
+            i.setId(idg.generateID());
+        }
 
         Gson gson = new Gson();
         String json = gson.toJson(target, listType);

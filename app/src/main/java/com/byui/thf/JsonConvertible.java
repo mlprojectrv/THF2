@@ -2,9 +2,9 @@ package com.byui.thf;
 
 public class JsonConvertible {
     protected int id;
-    protected int primaryId;
 
     public int getId() {
         return id;
     }
+    public void setId(int id){this.id = id;}
 }

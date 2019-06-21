@@ -1,6 +1,6 @@
 package com.byui.thf;
 
-public class Product {
+public class Product extends JsonConvertible {
     private int product_id;
     private String type;
     private String series;

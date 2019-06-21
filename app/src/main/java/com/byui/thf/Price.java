@@ -9,12 +9,7 @@ public class Price extends JsonConvertible{
     private Date end_date;
     private int amount;
     private boolean active;
-    public static int primaryId = 0;
 
-    Price(){
-        this.id = primaryId;
-        increment();
-    }
     // getters
 
     public int getPrice_id(){return id;}
@@ -27,7 +22,6 @@ public class Price extends JsonConvertible{
 
     public int getAmount(){return amount;}
 
-    public int getPrimaryId(){return primaryId;}
     // setters
 
     public void setAmount(int amount) {
@@ -46,11 +40,6 @@ public class Price extends JsonConvertible{
 
     public void setStart_date(Date start_date) {
         this.start_date = start_date;
-    }
-
-
-    private void increment(){
-        primaryId++;
     }
 
 }

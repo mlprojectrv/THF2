@@ -2,9 +2,9 @@ package com.byui.thf;
 
 import java.util.Date;
 
-public class Sales {
+public class Sales extends JsonConvertible {
 
-    // Defalt constructor
+    // Default constructor
     Sales() {
         product_id = new Product_id();
         price_id = new Price_id();

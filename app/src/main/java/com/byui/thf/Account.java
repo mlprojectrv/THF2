@@ -1,6 +1,8 @@
 package com.byui.thf;
 
-public class Account {
+import android.util.JsonReader;
+
+public class Account extends JsonConvertible {
     private String firstName;
     private String lastName;
     private String userName;

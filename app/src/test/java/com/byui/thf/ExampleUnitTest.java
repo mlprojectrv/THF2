@@ -77,8 +77,8 @@ public class ExampleUnitTest {
         IdGenerator idg = new IdGenerator();
 
 
-        Type listType = new TypeToken<List<Price>>() {}.getType();
-        List<Price> target = new LinkedList<>();
+        Type listType = new TypeToken<List<JsonConvertible>>() {}.getType();
+        List<JsonConvertible> target = new LinkedList<>();
         target.add(p1);
         target.add(p2);
         target.add(p3);
@@ -94,6 +94,8 @@ public class ExampleUnitTest {
         System.out.print(json);
 
         writingJson(target2, "price 1");
+
+        List<JsonConvertible> target1  = readJson("price", listType);
     }
 
     public void writingJson(List<JsonConvertible> list, String filename) {
@@ -103,5 +105,20 @@ public class ExampleUnitTest {
         } catch(IOException cause){
             System.out.println("Trouble writing file.");
         }
+    }
+
+    public List<JsonConvertible> readJson(String filename, Type type){
+        Gson gson = new Gson();
+        List<JsonConvertible> file;
+        try(BufferedReader bufferedReader = new BufferedReader(new FileReader(filename))){
+            file = gson.fromJson(bufferedReader, type);
+        } catch (FileNotFoundException cause){
+            System.out.println("File Not found.");
+            return null;
+        } catch (IOException cause){
+            System.out.println("Io error.");
+            return null;
+        }
+        return file;
     }
 }

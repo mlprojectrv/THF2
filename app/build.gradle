@@ -51,3 +51,5 @@ dependencies {
     implementation 'com.google.firebase:firebase-core:16.0.9'
 }
 apply plugin: 'com.google.gms.google-services'
+
+implementation 'com.google.firebase:firebase-firestore:20.0.0'

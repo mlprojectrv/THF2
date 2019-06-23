@@ -26,3 +26,5 @@ task clean(type: Delete) {
     delete rootProject.buildDir
 }
 
+implementation 'com.google.firebase:firebase-firestore:20.0.0'
+

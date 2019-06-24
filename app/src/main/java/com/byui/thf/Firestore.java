@@ -1,5 +1,10 @@
 package com.byui.thf;
 
+import java.util.HashMap;
+import java.util.Map;
+import android.util.Log;
+import java.util.collection;
+
 public class Firestore {
 
     // Access a Cloud Firestore instance from your Activity

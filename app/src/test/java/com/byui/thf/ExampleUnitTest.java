@@ -88,13 +88,19 @@ public class ExampleUnitTest {
         }
 
         Gson gson = new Gson();
+
+        /// Converts String(Linked list) to Json
         String json = gson.toJson(target, listType);
+
+        /// ?????
         List<JsonConvertible> target2 = gson.fromJson(json, listType);
 
         System.out.print(json);
 
+        /// write Json
         writingJson(target2, "price 1");
 
+        /// Read Json file
         List<JsonConvertible> target1  = readJson("price", listType);
     }
 
@@ -107,7 +113,7 @@ public class ExampleUnitTest {
         }
     }
 
-    public List<JsonConvertible> readJson(String filename, Type type){
+    public List<JsonConvertible> readJson(String filename, Type type) {
         Gson gson = new Gson();
         List<JsonConvertible> file;
         try(BufferedReader bufferedReader = new BufferedReader(new FileReader(filename))){

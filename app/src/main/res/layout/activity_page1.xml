@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:text="Create New Price"
         tools:layout_editor_absoluteX="129dp"
-        tools:layout_editor_absoluteY="177dp" />
+        tools:layout_editor_absoluteY="186dp" />
 
     <Button
         android:id="@+id/button4"

@@ -3,22 +3,30 @@ package com.byui.thf;
 import java.util.HashMap;
 import java.util.Map;
 import android.util.Log;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.
 import java.util.Collection;
 
 public class Firestore {
 
+    private DatabaseReference mDatabase;
+
+    mDatabase = FirebaseDatabase.getInstance().getReference();
+
+
+    /*
     // Access a Cloud Firestore instance from your Activity
-    FirebaseFirestore db = FiDatabaseReference rebaseFirestore.getInstance();
+    // FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     // Add Data
     // Create a new user with a first and last name
-    Map<String, Object> user = new HashMap<>();
-    // instead of sending actual data, we want to send a Json format of data
-    // Sales, Product, Price lists.
-    user.put("first", "Ada");
-    user.put("last", "Lovelace");
+    // Map<String, Object> user = new HashMap<>();
+    // user.put("first", "Ada");
+    ''' user.put("last", "Lovelace");
     user.put("born", 1815);
 
     // Add a new document with a generated ID
@@ -52,4 +60,6 @@ public class Firestore {
             }
         }
     });
+    */
+
 }

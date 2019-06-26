@@ -77,6 +77,7 @@ public class ExampleUnitTest {
         IdGenerator idg = new IdGenerator();
 
 
+
         Type listType = new TypeToken<List<JsonConvertible>>() {}.getType();
         List<JsonConvertible> target = new LinkedList<>();
         target.add(p1);

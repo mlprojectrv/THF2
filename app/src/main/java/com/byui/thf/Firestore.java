@@ -10,11 +10,13 @@ import java.util.Collection;
 public class Firestore {
 
     // Access a Cloud Firestore instance from your Activity
-    FirebaseFirestore db = FirebaseFirestore.getInstance();
+    FirebaseFirestore db = FiDatabaseReference rebaseFirestore.getInstance();
 
     // Add Data
     // Create a new user with a first and last name
     Map<String, Object> user = new HashMap<>();
+    // instead of sending actual data, we want to send a Json format of data
+    // Sales, Product, Price lists.
     user.put("first", "Ada");
     user.put("last", "Lovelace");
     user.put("born", 1815);

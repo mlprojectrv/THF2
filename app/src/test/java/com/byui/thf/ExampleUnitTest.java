@@ -54,7 +54,69 @@ public class ExampleUnitTest {
     }
 
     @Test
-    public void func() {
+    public void productFunc() {
+        Product pd1 = new Product();
+        pd1.setType("silk");
+        pd1.setSeries("series 1");
+        pd1.setPattern("flower");
+        pd1.setColor1("Red");
+        pd1.setColor2("Green");
+        pd1.setQuanitity(3);
+
+        Product pd2 = new Product();
+        pd2.setType("cotton");
+        pd2.setSeries("series 2");
+        pd2.setPattern("tiger");
+        pd2.setColor1("Blue");
+        pd2.setColor2("Yellow");
+        pd2.setQuanitity(2);
+
+        Product pd3 = new Product();
+        pd3.setType("cotton");
+        pd3.setSeries("series 3");
+        pd3.setPattern("whale");
+        pd3.setColor1("Orange");
+        pd3.setColor2("White");
+        pd3.setQuanitity(5);
+
+        // from this, we will get product_id
+        IdGenerator idg = new IdGenerator();
+
+
+        Type listType = new TypeToken<List<JsonConvertible>>() {}.getType();
+        List<JsonConvertible> target = new LinkedList<>();
+        target.add(pd1);
+        target.add(pd2);
+        target.add(pd3);
+
+        for (JsonConvertible i : target) {
+            i.setId(idg.generateID());
+        }
+
+        /// serializing : Json -> String
+        /// Deserializing  : String -> Json
+
+        Gson gson = new Gson();
+
+        /// Converts String(Linked list) to Json
+        /// put together part
+        String json = gson.toJson(target, listType);
+
+        /// Json to Linked list
+        /// break it up
+        List<JsonConvertible> target2 = gson.fromJson(json, listType);
+
+        System.out.print(json);
+
+        /// write Json
+        writingJson(target2, "product 1");
+
+        /// Read Json file
+        List<JsonConvertible> target1  = readJson("product", listType);
+    }
+
+    @Test
+    public void priceFunc() {
         Calendar c1 = Calendar.getInstance();
         c1.set(1994, 8, 12);
         Price p1 = new Price();
@@ -87,12 +149,17 @@ public class ExampleUnitTest {
             i.setId(idg.generateID());
         }
 
+        /// serializing : Json -> String
+        /// Deserializing  : String -> Json
+
         Gson gson = new Gson();
 
         /// Converts String(Linked list) to Json
+        /// put together part
         String json = gson.toJson(target, listType);
 
-        /// ?????
+        /// Json to Linked list
+        /// break it up
         List<JsonConvertible> target2 = gson.fromJson(json, listType);
 
         System.out.print(json);

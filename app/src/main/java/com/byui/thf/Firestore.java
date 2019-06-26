@@ -3,7 +3,9 @@ package com.byui.thf;
 import java.util.HashMap;
 import java.util.Map;
 import android.util.Log;
-import java.util.collection;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+import java.util.Collection;
 
 public class Firestore {
 

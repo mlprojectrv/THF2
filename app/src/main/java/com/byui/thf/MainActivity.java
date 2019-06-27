@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void validate(String userName, String userPassword) {
         // check id and password in this function.
+        //
         if ((userName.equals("Admin")) && (userPassword.equals("1234"))) {
             Intent loginIntent = new Intent(MainActivity.this, LoginActivity.class);
             startActivity(loginIntent);

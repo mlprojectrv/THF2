@@ -1,6 +1,12 @@
 package com.byui.thf;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.lang.reflect.Type;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import android.util.Log;
 
@@ -13,6 +19,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreSettings;
+import com.google.gson.Gson;
 
 import static android.content.ContentValues.TAG;
 
@@ -62,6 +69,21 @@ public class Firestore {
                     }
                 });
 
+    }
+
+    public List<JsonConvertible> readJson(String filename, Type type) {
+        Gson gson = new Gson();
+        List<JsonConvertible> file;
+        try(BufferedReader bufferedReader = new BufferedReader(new FileReader(filename))){
+            file = gson.fromJson(bufferedReader, type);
+        } catch (FileNotFoundException cause){
+            System.out.println("File Not found.");
+            return null;
+        } catch (IOException cause){
+            System.out.println("Io error.");
+            return null;
+        }
+        return file;
     }
 
     /*

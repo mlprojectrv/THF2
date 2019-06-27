@@ -1,6 +1,7 @@
 package com.byui.thf;
 
 import android.content.Context;
+
 import androidx.test.InstrumentationRegistry;
 import androidx.test.runner.AndroidJUnit4;
 
@@ -19,6 +20,7 @@ public class ExampleInstrumentedTest {
     @Test
     public void useAppContext() {
         // Context of the app under test.
+
         Context appContext = InstrumentationRegistry.getTargetContext();
 
         assertEquals("com.byui.thf", appContext.getPackageName());

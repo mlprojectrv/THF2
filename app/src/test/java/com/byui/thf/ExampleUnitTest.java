@@ -136,6 +136,32 @@ public class ExampleUnitTest {
         p3.setEnd_date(null);
         p3.setAmount(50);
 
+        //woo's made dis function
+        Product pr1 = new Product();
+
+        pr1.setQuanitity(1);
+        pr1.setColor1("yellow");
+        pr1.setColor2("green");
+        pr1.setPattern("stripe");
+        pr1.setSeries("idunno");
+        pr1.setType("idunno");
+
+        Product pr2 = new Product();
+        pr2.setQuanitity(1);
+        pr2.setColor1("white");
+        pr2.setColor2("brown");
+        pr2.setPattern("fill");
+        pr2.setSeries("idunno");
+        pr2.setType("idunno");
+
+        Product pr3 = new Product();
+        pr3.setQuanitity(1);
+        pr3.setColor1("purple");
+        pr3.setColor2("blue");
+        pr3.setPattern("Floral");
+        pr3.setSeries("idunno");
+        pr3.setType("idunno");
+        //woo finishes the function above
         IdGenerator idg = new IdGenerator();
 
 
@@ -145,6 +171,15 @@ public class ExampleUnitTest {
         target.add(p1);
         target.add(p2);
         target.add(p3);
+
+        //woo edits
+        target.add(pr1);
+        target.add(pr2);
+        target.add(pr3);
+        //finished
+
+
+
 
         for (JsonConvertible i : target) {
             i.setId(idg.generateID());
@@ -171,6 +206,10 @@ public class ExampleUnitTest {
         /// Read Json file
         List<JsonConvertible> target1  = readJson("price", listType);
     }
+
+
+
+
 
     public void writingJson(List<JsonConvertible> list, String filename) {
         Gson gson = new Gson();

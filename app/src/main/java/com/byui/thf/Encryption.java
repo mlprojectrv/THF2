@@ -51,12 +51,12 @@ public final class Encryption {
     }
 
     /**
-     * This function takes the password from the {@link Account_id} class and hashes it.
+     * This function takes the password from the {@link Account} class and hashes it.
      * As a side-effect, the original password value is removed for security purposes.
      * @param user The user whose password needs to be hashed.
      * @exception Exception If there is a problem with the chosen hash function.
      */
-    public static void hashUserPassword(Account_id user) throws Exception {
+    public static void hashUserPassword(com.byui.thf.Account user) throws Exception {
 
 
         // Get the next random salt value to use for this password
@@ -90,15 +90,16 @@ public final class Encryption {
     }
 
     /**
-     * This function uses the password and salt in the {@link Account_id} to generate a hash,
+     * This function uses the password and salt in the {@link Account} to generate a hash,
      * then compares that hash to the original hash value.
      * @param user The user whose password needs to be hashed.
      * @return Whether or not the password values match.
      * @exception Exception If there is a problem with the chosen hash function.
      */
-    public static Boolean verifyPassword(Account_id user) throws Exception {
+    public static Boolean verifyPassword(com.byui.thf.Account user) throws Exception {
 
         // Have to get the raw data values to use on our hash function
+
         char[] password = user.getPassword().toCharArray();
         byte[] salt = Base64.getDecoder().decode(user.getSalt());
 

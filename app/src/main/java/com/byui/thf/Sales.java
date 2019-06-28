@@ -6,24 +6,23 @@ public class Sales extends JsonConvertible {
 
     // Default constructor
     Sales() {
-        product_id = new Product_id();
-        price_id = new Price_id();
-        account_id = new Account_id(null);
+        product_id = 0;
+        price_id = 0;
+        account_id = 0;
     }
 
     public int sale_id;
 
     // objects
-    public Product_id product_id;
-    public Price_id price_id;
-    public Account_id account_id;
-
+    private int product_id;
+    private int price_id;
+    private int account_id;
     public Date date;
     public int amount;
     public boolean discount;
     // shipping fee (float)
-    public float shippingCost;
-    public int created_by;
+    private float shippingCost;
+    private int created_by;
 
     public Date getDate() {
         return date;
@@ -64,5 +63,7 @@ public class Sales extends JsonConvertible {
     public void setCreated_by(int created_by) {
         this.created_by = created_by;
     }
+
+    //TODO getter and setter for account_id, price_id and product_id.
 
 }

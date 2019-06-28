@@ -8,6 +8,12 @@ public class Account extends JsonConvertible {
     private String userName;
     private String password;
     private String hashCode;
+    private String hash;
+    private String salt;
+
+    Account(String startPassword) {
+        password = startPassword;
+    }
 
     public String getFirstName() {
         return firstName;
@@ -17,7 +23,7 @@ public class Account extends JsonConvertible {
         this.firstName = firstName;
     }
 
-    public String getlastName() {
+    public String getLastName() {
         return lastName;
     }
 
@@ -33,12 +39,34 @@ public class Account extends JsonConvertible {
         this.userName = userName;
     }
 
-    public String getPassword() {
-        return password;
+    public void setPassword(String newPassword) {
+        password = newPassword;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public String getPassword(){return password;}
+
+    public String getSalt() {
+        return salt;
+    }
+
+    public void setSalt(String newSalt) {
+        salt = newSalt;
+    }
+
+    public String getHash() {
+        return hash;
+    }
+
+    public void encrypt()throws Exception {
+        Encryption.hashUserPassword(this);
+    }
+    public void setHash(String hash){this.hash = hash; }
+
+    public boolean checkPassword (String password)throws Exception{
+        setPassword(password);
+        if (Encryption.verifyPassword(this)){
+            return true;}
+        else{return false;}
     }
 
     public String getHashCode() {

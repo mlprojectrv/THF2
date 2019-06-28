@@ -26,28 +26,25 @@ import static org.junit.Assert.*;
  */
 public class ExampleUnitTest {
 
-
-    public void data_Input_valid() {
+    @Test
+    public void data_Input_valid2() {
         Calendar c1 = Calendar.getInstance();
         c1.set(1994, 4, 12);
 
+        IdGenerator idg = new IdGenerator();
 
-        Sales s1 = new Sales();
-        Price p1 = new Price();
-        p1.setStart_date(c1.getTime());
-
-        s1.amount = 10;
-        s1.created_by = 1;
-        s1.account_id.setPassword("PassworD");
-        s1.discount = true;
+        Account a1 = new Account("password");
+        a1.setFirstName("Keith");
+        a1.setUserName("admin034");
+        a1.setPassword("password01");
         try {
-            s1.account_id.encrypt() ;
+            a1.encrypt();
         } catch (Exception e) {
             e.printStackTrace();
         }
 
         try {
-            s1.account_id.login("PassworD");
+            System.out.println(a1.checkPassword("password01"));
         } catch (Exception e) {
             e.printStackTrace();
         }

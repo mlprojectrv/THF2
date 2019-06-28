@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "559298067272-66dnjdod8nm27mfhnh2janpiq14mpg6f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.byui.thf",
+            "certificate_hash": "ffc120d45282572d09b35e06220fd5ec82981f8b"
+          }
+        },
+        {
           "client_id": "559298067272-qct5g9baeo2l2i90j7qi3nik3g6bnrkg.apps.googleusercontent.com",
           "client_type": 3
         }

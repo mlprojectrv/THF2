@@ -64,6 +64,10 @@ public class Sales extends JsonConvertible {
         this.created_by = created_by;
     }
 
-    //TODO getter and setter for account_id, price_id and product_id.
+    public void setProduct_id(int id){this.price_id = id;}
+
+    public void setAccount_id(int id){this.price_id = id;}
+
+    public void setPrice_id(int price_id) { this.price_id = price_id;}
 
 }

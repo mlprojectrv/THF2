@@ -21,7 +21,8 @@ public class Sales_Activity extends AppCompatActivity implements AdapterView.OnI
 
         Spinner spinner = findViewById(R.id.spinner1);
 
-        ArrayAdapter<CharSequence> adapter= ArrayAdapter.createFromResource(context: this, R.array.numbers, android.R.layout.simple_spinner_item);
+
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.numbers, simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);

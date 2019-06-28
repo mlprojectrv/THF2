@@ -7,14 +7,26 @@
     tools:context=".Price_Activity">
 
     <Spinner
-
         android:id="@+id/spinner1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf ="parent"
-        app:layout_constrainLeft_toLeftOf ="parent"
-        app:layout_constrainRight_toRightOf ="parent"
-        app:layout_constrainTop_toTopOf ="parent" />
+        android:layout_width="251dp"
+        android:layout_height="119dp"
+        android:layout_marginBottom="360dp"
+        app:layout_constrainLeft_toLeftOf="parent"
+        app:layout_constrainRight_toRightOf="parent"
+        app:layout_constrainTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="76dp" />
+
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="251dp"
+        android:layout_height="119dp"
+        android:layout_marginBottom="156dp"
+        app:layout_constrainLeft_toLeftOf="parent"
+        app:layout_constrainRight_toRightOf="parent"
+        app:layout_constrainTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="76dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

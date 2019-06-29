@@ -3,7 +3,6 @@ package com.byui.thf;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -19,7 +18,6 @@ public class Sales_Activity extends AppCompatActivity implements AdapterView.OnI
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_price_);
-        Intent intent = getIntent();
 
         Spinner spinner = findViewById(R.id.spinner1);
 

@@ -17,7 +17,7 @@ public class Sales_Activity<adapter1> extends AppCompatActivity implements Adapt
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_price_);
+        setContentView(R.layout.activity_sales);
 
         //spinner1
         Spinner spinner = findViewById(R.id.spinner1);

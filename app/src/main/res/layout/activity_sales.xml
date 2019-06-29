@@ -3,15 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/sale"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".Sales_Activity">
 
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="number"
-        tools:layout_editor_absoluteX="99dp"
-        tools:layout_editor_absoluteY="451dp" />
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="187dp"
+        android:layout_height="171dp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="88dp"
+        tools:layout_editor_absoluteY="67dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

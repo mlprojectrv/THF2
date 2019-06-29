@@ -64,18 +64,4 @@ public class MainActivity extends AppCompatActivity {
     public void successLogin(View theButton) {
 
     }
-
-    public class Sales {
-        int sale_id;
-        int product_id;
-        int price_id;
-        int account_id;
-        Date date;
-        int amount;
-        boolean discount;
-        // shipping fee (float)
-        float calShippingCost;
-        int created_by;
-    }
-
 }

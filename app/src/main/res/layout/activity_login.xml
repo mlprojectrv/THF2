@@ -49,12 +49,21 @@
 
     <Button
         android:id="@+id/price"
-        android:layout_width="112dp"
-        android:layout_height="67dp"
+        android:layout_width="116dp"
+        android:layout_height="69dp"
         android:layout_marginTop="140dp"
         android:text="@string/pricec"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="187dp"
+        android:layout_height="171dp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="112dp"
+        tools:layout_editor_absoluteY="334dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

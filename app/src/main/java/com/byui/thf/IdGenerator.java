@@ -1,22 +1,22 @@
 package com.byui.thf;
 
 public class IdGenerator {
-    private int id;
+    private static int id;
+    private static IdGenerator idGenerator = new IdGenerator();
 
-    IdGenerator(){id = 0;}
+    private IdGenerator(){id = 0;}
 
     private void setId(int id){
         this.id = id;
     }
 
-    private void increment(int increment){
-        setId(id + increment);
+    private static void increment(int increment){
+        idGenerator.setId(idGenerator.id + increment);
     }
 
-    public int getId(){return id;}
-
-    public int generateID(){
-        increment(1);
-        return getId();
+    public static int  generateID(){
+        idGenerator.increment(1);
+        return idGenerator.id;
     }
+
 }

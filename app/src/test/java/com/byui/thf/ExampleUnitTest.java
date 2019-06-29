@@ -31,7 +31,7 @@ public class ExampleUnitTest {
         Calendar c1 = Calendar.getInstance();
         c1.set(1994, 4, 12);
 
-        IdGenerator idg = new IdGenerator();
+        IdGenerator.generateID();
 
         Account a1 = new Account("password");
         a1.setFirstName("Keith");
@@ -77,7 +77,6 @@ public class ExampleUnitTest {
         pd3.setQuanitity(5);
 
         // from this, we will get product_id
-        IdGenerator idg = new IdGenerator();
 
 
         Type listType = new TypeToken<List<JsonConvertible>>() {}.getType();
@@ -87,7 +86,7 @@ public class ExampleUnitTest {
         target.add(pd3);
 
         for (JsonConvertible i : target) {
-            i.setId(idg.generateID());
+            i.setId(IdGenerator.generateID());
         }
 
         /// serializing : Json -> String
@@ -107,6 +106,8 @@ public class ExampleUnitTest {
 
         /// write Json
         writingJson(target2, "product 1");
+
+
 
         /// Read Json file
         List<JsonConvertible> target1  = readJson("product", listType);
@@ -159,7 +160,6 @@ public class ExampleUnitTest {
         pr3.setSeries("idunno");
         pr3.setType("idunno");
         //woo finishes the function above
-        IdGenerator idg = new IdGenerator();
 
 
 
@@ -179,7 +179,7 @@ public class ExampleUnitTest {
 
 
         for (JsonConvertible i : target) {
-            i.setId(idg.generateID());
+            i.setId(IdGenerator.generateID());
         }
 
         /// serializing : Json -> String

@@ -17,7 +17,7 @@ public class Sales_Activity extends AppCompatActivity implements AdapterView.OnI
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_price_);
+        setContentView(R.layout.activity_sales);
 
         Spinner spinner = findViewById(R.id.spinner1);
 

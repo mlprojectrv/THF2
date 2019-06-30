@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 import static android.R.layout.simple_spinner_item;
 
-public class Sales_Activity<adapter1> extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
+public class Sales_Activity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -4,22 +4,15 @@ import android.content.Intent;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.Spinner;
-import android.widget.Toast;
 
-import static android.R.layout.simple_spinner_item;
 
-public class LoginActivity  extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class LoginActivity  extends AppCompatActivity {
 
-    private Button prob;
-    private Button prib;
-    private Button saleb;
-    //woo changed below
+    private Button product;
+    private Button price;
+    private Button sale;
     private Button button;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,65 +20,82 @@ public class LoginActivity  extends AppCompatActivity implements AdapterView.OnI
         setContentView(R.layout.activity_login);
 
         //woos button example
-        button =(Button) findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener(){
+        button = (Button) findViewById(R.id.button);
+        product = (Button) findViewById(R.id.product);
+        price = (Button) findViewById(R.id.price);
+        sale = (Button) findViewById(R.id.sale);
+
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
+            public void onClick(View v) {
                 openActivity2();
 
             }
         });
 
-
-        // Title
-        setTitle("HansomeTieFactory");
-        // data received from main
-        Intent intent = getIntent();
-
-        // 3 button and listeners
-        prob = (Button)findViewById(R.id.product);
-        prib = (Button)findViewById(R.id.price);
-        saleb =(Button)findViewById(R.id.sale);
-
-        Spinner spinner = findViewById(R.id.spinner1);
-
-
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.numbers, simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(this);
-
-
-        saleb.setOnClickListener(new View.OnClickListener() {
+        product.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                salesPage();
-            }});
+                openActivity3();
+
+            }
+        });
+
+        price.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openActivity4();
+
+            }
+        });
+
+        sale.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openActivity5();
+
+            }
+        });
     }
 
-    private void salesPage(){
-        Intent saleIntent = new Intent(LoginActivity.this, Sales_Activity.class);
-        startActivity(saleIntent);
-    }
+        // Title
+    //    setTitle("HansomeTieFactory");
+        // data received from main
+    //    Intent intent = getIntent();
+
+        // 3 button and listeners
+        // prob = (Button)findViewById(R.id.product);
+        //  prib = (Button)findViewById(R.id.price);
+        // saleb =(Button)findViewById(R.id.sale);
+
+    //    Spinner spinner = findViewById(R.id.spinner1);
 
 
-
-    @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        String text= parent.getItemAtPosition(position).toString();
-        Toast.makeText(parent.getContext(),text, Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> parent) {
-
-    }
+   //     ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.numbers, simple_spinner_item);
+  //      adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+    //    spinner.setAdapter(adapter);
+   //     spinner.setOnItemSelectedListener(this);
 
 
+        //woo example.
+        public void openActivity2(){
+            Intent intent = new Intent(this, woo_test.class);
+            startActivity(intent);
+        }
 
-    //woo example.
-    public void openActivity2(){
-        Intent intent =new Intent(this, woo_test.class);
-        startActivity(intent);
-    }
+        public void openActivity3(){
+            Intent intent1 = new Intent(this, woo_test.class);
+            startActivity(intent1);
+        }
+
+        public void openActivity4(){
+            Intent intent2 = new Intent(this, woo_test.class);
+            startActivity(intent2);
+        }
+
+        public void openActivity5(){
+            Intent intent3 = new Intent(this, woo_test.class);
+            startActivity(intent3);
+        }
+
 }

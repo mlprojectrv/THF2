@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity" >
+    tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/editText5"
@@ -25,47 +25,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.075" />
 
-    <Button
-        android:id="@+id/sale"
-        android:layout_width="114dp"
-        android:layout_height="71dp"
-        android:layout_marginTop="140dp"
-        android:text="@string/salec"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.932"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/product"
-        android:layout_width="115dp"
-        android:layout_height="71dp"
-        android:layout_marginTop="136dp"
-        android:text="@string/productc"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.067"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/price"
-        android:layout_width="116dp"
-        android:layout_height="69dp"
-        android:layout_marginTop="140dp"
-        android:text="@string/pricec"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-    <Spinner
-        android:id="@+id/spinner1"
-        android:layout_width="187dp"
-        android:layout_height="171dp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="112dp"
-        tools:layout_editor_absoluteY="334dp" />
 
     <Button
         android:id="@+id/button"
@@ -73,5 +32,35 @@
         android:layout_height="wrap_content"
         android:text="open woohoo's file"
         tools:layout_editor_absoluteX="121dp"
-        tools:layout_editor_absoluteY="258dp" />
+        tools:layout_editor_absoluteY="487dp"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/product"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="product"
+        tools:layout_editor_absoluteX="174dp"
+        tools:layout_editor_absoluteY="398dp"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Price"
+        tools:layout_editor_absoluteX="174dp"
+        tools:layout_editor_absoluteY="318dp"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/sale"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="sale"
+        tools:layout_editor_absoluteX="174dp"
+        tools:layout_editor_absoluteY="226dp"
+        tools:ignore="MissingConstraints" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

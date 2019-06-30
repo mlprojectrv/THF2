@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
 import java.util.Calendar;
+
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -200,7 +202,9 @@ public class ExampleUnitTest {
         /// write Json
         writingJson(target2, "price 1");
 
-        Firestore.StoreJson(target2);
+        mfire = FirebaseFirestore.getInstance();
+        Firestore f1 = new Firestore(mfire);
+        f1.StoreJson(target2);
 
         /// Read Json file
         List<JsonConvertible> target1  = readJson("price", listType);

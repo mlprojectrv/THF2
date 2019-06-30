@@ -200,6 +200,8 @@ public class ExampleUnitTest {
         /// write Json
         writingJson(target2, "price 1");
 
+        Firestore.StoreJson(target2);
+
         /// Read Json file
         List<JsonConvertible> target1  = readJson("price", listType);
     }

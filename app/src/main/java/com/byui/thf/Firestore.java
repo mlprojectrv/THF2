@@ -9,13 +9,16 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.lang.reflect.Type;
+import java.util.Calendar;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
@@ -28,7 +31,7 @@ public class Firestore {
     private String Product;
     private String Sales;
     private String Price;
-    private DocumentReference mDocRef = FirebaseFirestore.getInstance().document("JsonUpdate/Q4PGpcjnBEAE6CiQSbD5");
+    private static DocumentReference mDocRef = FirebaseFirestore.getInstance().document("JsonUpdate/Q4PGpcjnBEAE6CiQSbD5");
 
    /*  public Firestore(FirebaseFirestore db) {
         this.db = db;
@@ -43,12 +46,105 @@ public class Firestore {
         db.setFirestoreSettings(settings);
 
     } */
-    public void StoreJson(String Product, String Sales, String Price){
+
+
+    public void priceFunc() {
+        Calendar c1 = Calendar.getInstance();
+        c1.set(1994, 8, 12);
+        Price p1 = new Price();
+        p1.setStart_date(c1.getTime());
+        p1.setEnd_date(null);
+        p1.setAmount(10);
+
+        Price p2 = new Price();
+        c1.set(1994, 8, 13);
+        p2.setStart_date(c1.getTime());
+        p2.setEnd_date(null);
+        p2.setAmount(50);
+
+        Price p3 = new Price();
+        c1.set(1994, 8, 13);
+        p3.setStart_date(c1.getTime());
+        p3.setEnd_date(null);
+        p3.setAmount(50);
+
+        //woo's made dis function
+        Product pr1 = new Product();
+
+        pr1.setQuanitity(1);
+        pr1.setColor1("yellow");
+        pr1.setColor2("green");
+        pr1.setPattern("stripe");
+        pr1.setSeries("idunno");
+        pr1.setType("idunno");
+
+        Product pr2 = new Product();
+        pr2.setQuanitity(1);
+        pr2.setColor1("white");
+        pr2.setColor2("brown");
+        pr2.setPattern("fill");
+        pr2.setSeries("idunno");
+        pr2.setType("idunno");
+
+        Product pr3 = new Product();
+        pr3.setQuanitity(1);
+        pr3.setColor1("purple");
+        pr3.setColor2("blue");
+        pr3.setPattern("Floral");
+        pr3.setSeries("idunno");
+        pr3.setType("idunno");
+        //woo finishes the function above
+
+
+
+        Type listType = new TypeToken<List<JsonConvertible>>() {}.getType();
+        List<JsonConvertible> target = new LinkedList<>();
+        target.add(p1);
+        target.add(p2);
+        target.add(p3);
+
+        //woo edits
+        target.add(pr1);
+        target.add(pr2);
+        target.add(pr3);
+        //finished
+
+
+
+
+        for (JsonConvertible i : target) {
+            i.setId(IdGenerator.generateID());
+        }
+
+        /// serializing : Json -> String
+        /// Deserializing  : String -> Json
+
+        Gson gson = new Gson();
+
+        /// Converts String(Linked list) to Json
+        /// put together part
+        String json = gson.toJson(target, listType);
+
+        /// Json to Linked list
+        /// break it up
+        List<JsonConvertible> target2 = gson.fromJson(json, listType);
+
+        System.out.print(json);
+
+        /// write Json
+
+        StoreJson(target2);
+
+        /// Read Json file
+        List<JsonConvertible> target1  = readJson("price", listType);
+    }
+
+    public static void StoreJson(List<JsonConvertible> Product){
 
         Map<String, Object> Update = new HashMap<>();
         Update.put("Product", Product);
-        Update.put("Sales", Sales);
-        Update.put("Price", Price);
+       // Update.put("Sales", Sales);
+        // Update.put("Price", Price);
 
         mDocRef.set(Update).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
@@ -78,5 +174,6 @@ public class Firestore {
         }
         return file;
     }
+
 
 }

@@ -6,60 +6,48 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/editText5"
-        android:layout_width="285dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="32dp"
-        android:ems="10"
-        android:text="@string/newrecord"
-        android:textColor="#B2524A4A"
-        android:textSize="28sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.075" />
-
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="open woohoo's file"
-        tools:layout_editor_absoluteX="121dp"
-        tools:layout_editor_absoluteY="487dp"
+        android:layout_marginBottom="240dp"
+        android:text="@string/productc"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/product"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="product"
-        tools:layout_editor_absoluteX="174dp"
-        tools:layout_editor_absoluteY="398dp"
+        android:layout_marginBottom="44dp"
+        android:text="@string/productc"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="@+id/button"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Price"
-        tools:layout_editor_absoluteX="174dp"
-        tools:layout_editor_absoluteY="318dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="28dp"
+        android:text="@string/pricec"
+        app:layout_constraintBottom_toTopOf="@+id/product"
+        app:layout_constraintStart_toStartOf="@+id/product"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/sale"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="sale"
-        tools:layout_editor_absoluteX="174dp"
-        tools:layout_editor_absoluteY="226dp"
+        android:layout_marginBottom="32dp"
+        android:text="@string/salec"
+        app:layout_constraintBottom_toTopOf="@+id/price"
+        app:layout_constraintEnd_toEndOf="@+id/price"
         tools:ignore="MissingConstraints" />
 
 

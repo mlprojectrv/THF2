@@ -17,12 +17,26 @@ public class LoginActivity  extends AppCompatActivity implements AdapterView.OnI
     private Button prob;
     private Button prib;
     private Button saleb;
+    //woo changed below
+    private Button button;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        //woos button example
+        button =(Button) findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                openActivity2();
+
+            }
+        });
+
+
         // Title
         setTitle("HansomeTieFactory");
         // data received from main
@@ -65,5 +79,13 @@ public class LoginActivity  extends AppCompatActivity implements AdapterView.OnI
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
 
+    }
+
+
+
+    //woo example.
+    public void openActivity2(){
+        Intent intent =new Intent(this, woo_test.class);
+        startActivity(intent);
     }
 }

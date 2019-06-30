@@ -44,6 +44,7 @@ dependencies {
 
 apply plugin: 'com.google.gms.google-services'
 
+
 dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:+'
     implementation 'androidx.recyclerview:recyclerview:1.0.0'

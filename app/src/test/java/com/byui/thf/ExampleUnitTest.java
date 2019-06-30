@@ -28,6 +28,7 @@ import static org.junit.Assert.*;
  */
 public class ExampleUnitTest {
 
+    private FirebaseFirestore mFirestore;
     @Test
     public void data_Input_valid2() {
         Calendar c1 = Calendar.getInstance();
@@ -202,9 +203,9 @@ public class ExampleUnitTest {
         /// write Json
         writingJson(target2, "price 1");
 
-        mfire = FirebaseFirestore.getInstance();
-        Firestore f1 = new Firestore(mfire);
-        f1.StoreJson(target2);
+        //mFirestore = FirebaseFirestore.getInstance();
+        //Firestore f1 = new Firestore(mFirestore);
+        //f1.StoreJson(target2);
 
         /// Read Json file
         List<JsonConvertible> target1  = readJson("price", listType);

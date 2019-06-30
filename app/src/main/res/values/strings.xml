@@ -18,4 +18,12 @@
         <item>Four</item>
         <item>Five</item>
     </string-array>
+
+    <string-array name="numbers1">
+        <item>$10</item>
+        <item>$20</item>
+        <item>$30</item>
+        <item>$40</item>
+        <item>$50</item>
+    </string-array>
 </resources>

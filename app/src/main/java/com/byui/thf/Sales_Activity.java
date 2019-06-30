@@ -12,13 +12,14 @@ import android.widget.Toast;
 
 import static android.R.layout.simple_spinner_item;
 
-public class Sales_Activity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
+public class Sales_Activity<adapter1> extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sales);
 
+        //spinner1
         Spinner spinner = findViewById(R.id.spinner1);
 
 
@@ -28,14 +29,24 @@ public class Sales_Activity extends AppCompatActivity implements AdapterView.OnI
         spinner.setOnItemSelectedListener(this);
     }
 
-    @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        String text= parent.getItemAtPosition(position).toString();
-        Toast.makeText(parent.getContext(),text, Toast.LENGTH_SHORT).show();
-    }
 
-    @Override
-    public void onNothingSelected(AdapterView<?> parent) {
 
-    }
+
+
+        @Override
+        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+            String text= parent.getItemAtPosition(position).toString();
+            Toast.makeText(parent.getContext(),text, Toast.LENGTH_SHORT).show();
+
+
+
+
+        }
+
+
+
+        @Override
+        public void onNothingSelected(AdapterView<?> parent) {
+
+        }
 }
